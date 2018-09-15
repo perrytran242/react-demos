@@ -1,5 +1,9 @@
 import React from 'react';
 
 export default props => {
-    return <span>Time here</span>
+    console.log('Props:', props)
+    console.log('props.time:', props.time)
+    return (
+        <span>{props.time.toLocaleTimeString()}</span>
+    )
 }
