@@ -5,44 +5,42 @@ class SigninForm extends Component {
         super(props)
 
         this.state = {
-            form: {
-                email: '',
-                password: ''
-            }
+            email: '',
+            password: '',
         }
     }
-    handleChange(event) {
-        const { name, value } = event.target;
+    handleChange = (event) => {
+        console.log('Current Target Value:', event.target.value);
+        console.log('Current Target Name:', event.target.name);
 
-        const { form } = this.state;
+        this.setState({
+            [event.target.name] : event.target.value,
+        })
 
-        this.setState( {form: {[name]: value}} )
     }
-    handleFormSubmit() {
+    handleFormSubmit = (event) => {
         event.preventDefault();
-        console.log('called handleformsubmit', this.state.form);
+        console.log('Form:', this.state);
 
-        const newState = {
-            form: {
-                email: '',
-                password: '',
-            }
-        }
-        this.setState(newState);
+        this.setState({
+            email: '',
+            password: '',
+        })
     }
     render() {
-        const { email, password } = this.state.form;
         return (
-            <form onSubmit={(event) => this.handleFormSubmit(event)}>
+            <form onSubmit= { this.handleFormSubmit } >
+                <h1>Sign up Form</h1>
                 <div>
                     <label>Email</label>
-                    <input type="email" value= { email } name="email" onChange= { (event) => this.handleChange(event)}/>
+                    <input onChange={this.handleChange} type="text" name="email" value= { this.state.email }/>
                 </div>
+
                 <div>
                     <label>Password</label>
-                    <input type="password" value= { password } name="password" onChange= { (event) => this.handleChange(event)}/>
+                    <input onChange = {this.handleChange} type="text" name="password" value= { this.state.password }/>
                 </div>
-                <button>Sign In</button>
+                <button>Sign Up</button>
             </form>
         )
     }

@@ -5,7 +5,10 @@ import SigninForm from './sign_in';
 
 const App = () => (
     <div>
-        <SigninForm/> 
+        <div className="app">
+            <SigninForm/> 
+        </div>
+    
     </div>
 );
 
