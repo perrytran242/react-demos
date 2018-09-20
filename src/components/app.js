@@ -1,13 +1,17 @@
 import React from 'react';
 import '../assets/css/app.css';
 import logo from '../assets/images/logo.svg';
+import HelloWorld from './hello_world';
+import BlueText from './blue_text';
+
 
 const App = () => (
     <div>
-        <div className="app">
-            <img src={logo} className="logo rotate"/>
-            <h1>Welcome to React</h1>
-        </div>
+        <HelloWorld team="green team" name="Perry"/>
+        <HelloWorld team="green team" name="Mia"/>
+        <HelloWorld team="green team" name="Jaytrin"/>
+        <HelloWorld team="green team" name="Jonathan"/>
+        <BlueText/>
     </div>
 );
 
