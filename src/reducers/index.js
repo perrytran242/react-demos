@@ -8,3 +8,5 @@ const rootReducer = combineReducers({
 });
 
 export default rootReducer;
+
+//sub categories -> to sub categories of conditions.
